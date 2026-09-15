@@ -14,3 +14,7 @@ SELECT * FROM alunos;
 SELECT JSON_EXTRACT(contato, '$[0].nome') AS nome_pai FROM alunos;
 
 SELECT nome, json_array_length(contato) AS qtd_contato FROM alunos;
+
+INSERT INTO alunos (nome, contato) VALUES ('Ana', '[{"nome": "Mãe", "telefone": "41977770000"}]');
+
+SELECT nome, json_array_length(contato) AS qtd_contato FROM alunos;
